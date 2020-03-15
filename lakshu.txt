@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 open the file in .......;;
+text
+=======
+open the file in .......
+text
+>>>>>>> 6c259294df18f1b535a4eb46cfdf3be04da045f1
