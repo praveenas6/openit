@@ -1,0 +1,29 @@
+pipeline{
+   agent any
+   stages{
+   stage('Checkout'){
+      
+      steps{
+	        script{
+		            git 'https://github.com/praveenas6/openit.git'
+	            }
+            echo "Checkout is Completed"
+      }
+   }
+   stage('Build'){
+      steps{
+       script{
+	 sh "./praveen.sh"
+	 echo "Build is completed"
+	 }
+   }
+   }
+       
+  post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+    }
+   
+}
+}
